@@ -1,28 +1,6 @@
 class Node:
     """Класс для узла стека"""
-    '''
-    def __init__(self, data):
-        """
-        Конструктор класса Node
 
-        :param data: данные, которые будут храниться в узле
-        """
-        self.data = data
-        self.next_node = None
-
-    def getData(self):
-        return self.data
-
-    def getNext(self):
-        return self.next_node
-
-    def setData(self, new_data):
-        self.data = new_data
-
-    def setNext(self, new_next_node):
-        self.next_node = new_next_node
-
-    '''
     def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
