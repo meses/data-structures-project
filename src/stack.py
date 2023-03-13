@@ -14,6 +14,19 @@ class Node:
 
 class Stack:
     """Класс для стека"""
+    @property
+    def top(self):
+        return self.head
+
+    @top.setter
+    def top(self, data):
+        self.head = data
+        return self.head
+
+
+    @property
+    def data(self):
+        return self.data
 
     def __init__(self, head=None):
         """Конструктор класса Stack"""
@@ -36,12 +49,6 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
-
-    @property
-    def top(self):
-        return self.head
-
-    @property
-    def data(self):
-        return self.data
+        result = self.top.data
+        self.top = self.top.next_node
+        return result
