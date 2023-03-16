@@ -52,3 +52,13 @@ class Stack:
         result = self.top.data
         self.top = self.top.next_node
         return result
+
+    def __str__(self):
+        current = self.head
+        result = ''
+        while current != None:
+            result += current.data
+            result += '\n'
+            current = current.next_node
+        result += 'None'
+        return result
