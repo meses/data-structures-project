@@ -30,6 +30,23 @@ class LinkedList:
             self.tail.next_node = data
             self.tail = data
 
+    def to_list(self) -> list:
+        result_list = []
+        node = self.head
+        while node:
+            result_list.append(node.data)
+            node = node.next_node
+        return result_list
+
+    def get_data_by_id(self, id):
+        for item in self.to_list():
+            try:
+                if item['id'] == id:
+                    return item
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id.')
+
+
     def __str__(self) -> str:
         """Вывод данных односвязного списка в строковом представлении"""
         node = self.head

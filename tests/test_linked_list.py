@@ -44,4 +44,24 @@ class TestQueue(unittest.TestCase):
         ll.insert_beginning('data0')
         self.assertEqual(str(ll), " data0 -> data1 -> data2 -> data3 -> None")
 
+    def test_get_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_at_end({'id': 1, 'username': 'lazzy508509'})
+        ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+        ll.insert_beginning({'id': 0, 'username': 'serebro'})
+        self.assertEqual(ll.get_data_by_id(2), {'id': 2, 'username': 'mik.roz'})
+        self.assertEqual(ll.get_data_by_id(0), {'id': 0, 'username': 'serebro'})
+        self.assertEqual(ll.get_data_by_id(4), None)
 
+
+    def test_to_list(self):
+        ll = LinkedList()
+        ll.insert_at_end({'id': 1, 'username': 'lazzy508509'})
+        ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+        ll.insert_beginning({'id': 0, 'username': 'serebro'})
+        self.assertEqual(ll.to_list(), [{'id': 0, 'username': 'serebro'},
+                                        {'id': 1, 'username': 'lazzy508509'},
+                                        {'id': 2, 'username': 'mik.roz'},
+                                        {'id': 3, 'username': 'mosh_s'}])
